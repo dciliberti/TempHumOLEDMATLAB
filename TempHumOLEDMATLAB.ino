@@ -1,11 +1,21 @@
-/**********************************
+/***************************************************************************
    Temperature and humidity display
-   Use a DHT22 sensor to acquire data
-   about room relative humidity and
-   temperature and display the values
-   on a 0.96" OLED screen. Also log
-   data on MATLAB.
-***********************************/
+   Use a DHT22 sensor to acquire data about room relative humidity and
+   temperature and display the values on a 0.96" OLED screen. It may also
+   log data with MATLAB.
+   
+    Copyright (C) 2018  Danilo Ciliberti dancili@gmail.com
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
+***************************************************************************/
 
 // Libraries
 #include <SPI.h>
@@ -36,7 +46,6 @@ void setup() {
   // sensor init
   dht.begin();
 
-  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3D (for the 128x64)
   // init done
 
